@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catalogue Sneakers</title>
+    <link rel="stylesheet"
+          <link rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+
+    <div class="header-content">
+
+        <img
+        src="https://i.pinimg.com/736x/ce/92/e6/ce92e67208b3029a24c3605ddc909d01.jpg"
+        class="logo"
+        alt="Logo">
+
+        <div>
+            <h1>Catalogue Sneakers</h1>
+            <p>Les meilleures sneakers du moment</p>
+        </div>
+
+    </div>
+
+</header>
+
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<footer>
+    Catalogue Sneakers
+</footer>
+
+</body>
+</html>

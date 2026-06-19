@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form class="search-bar" method="GET">
+
+    <input
+        type="text"
+        name="search"
+        placeholder="Rechercher une sneaker">
+
+    <button>
+        Rechercher
+    </button>
+
+</form>
+
+<a href="/add" class="add-btn">
+    Ajouter une sneaker
+</a>
+
+<div class="cards">
+
+{% for sneaker in sneakers %}
+
+<div class="card">
+
+    <img src="{{ sneaker.image }}"
+         alt="{{ sneaker.nom }}">
+
+    <div class="card-content">
+
+        <h3>{{ sneaker.nom }}</h3>
+
+        <p class="marque">
+            {{ sneaker.marque }}
+        </p>
+
+        <p class="prix">
+            {{ sneaker.prix }} €
+        </p>
+
+        <div class="details">
+
+            <p>
+                Catégorie :
+                {{ sneaker.categorie }}
+            </p>
+
+            <p>
+                Couleur :
+                {{ sneaker.couleur }}
+            </p>
+
+            <p>
+                Pointure :
+                {{ sneaker.pointure }}
+            </p>
+
+        </div>
+
+        <div class="actions">
+
+            <a
+             href="/edit/{{ sneaker.id }}"
+             class="edit-btn">
+                Modifier
+            </a>
+
+            <a
+             href="/delete/{{ sneaker.id }}"
+             class="delete-btn">
+                Supprimer
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

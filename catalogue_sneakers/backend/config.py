@@ -1,1 +1,0 @@
-DB_URI = "mysql+pymysql://root:@localhost/sneakers_db"

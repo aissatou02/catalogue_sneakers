@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="form-container">
+
+<h2>Modifier une sneaker</h2>
+
+<form
+ action="/update/{{ sneaker.id }}"
+ method="POST">
+
+<div class="form-group">
+<label>Nom</label>
+<input
+ value="{{ sneaker.nom }}"
+ type="text"
+ name="nom"
+ required>
+</div>
+
+<div class="form-group">
+<label>Prix</label>
+<input
+ value="{{ sneaker.prix }}"
+ type="number"
+ step="0.01"
+ name="prix"
+ required>
+</div>
+
+<div class="form-group">
+<label>Image</label>
+<input
+ value="{{ sneaker.image }}"
+ type="text"
+ name="image"
+ required>
+</div>
+
+<button class="submit-btn">
+Modifier
+</button>
+
+</form>
+
+</div>
+
+{% endblock %}
